@@ -1,29 +1,30 @@
 // printing prime factors of number
-import java.util.Scanner;
-class primefactor{
-	
-	static void primef(int s){
-		int i,z=0;
-		for(i=1;i<s;i++){
-			if(s%i == 0){
-				z++;
-		
-			}
-		}
-		if(z == 2)
-			System.out.printf("%d",s);
-	}
-	public static void main(String[] args) {
-	int j,n2;
-	Scanner ob = new Scanner(System.in);
-	System.out.printf("enter the number \n");
-	n2 = ob.nextInt();
-	for(j=2;j<n2;j++);
-	{
-		if(n2%j == 0)
-		{
-			primef(j);
-		}
-	}	
+import java.util.*;
+class primefactor {
+    public static void main(String[] args)
+    {   
+      Scanner sc=new Scanner(System.in);
+      Scanner scan = new Scanner(System.in);
+      System.out.print("Input a number: ");
+      int n = scan.nextInt();
+	  if (n>0)
+	  {	
+       while (n%2==0) 
+        { 
+            System.out.print(2 + " "); 
+            n /= 2; 
+        } 
+  
+        for (int i = 3; i <= Math.sqrt(n); i+= 2) 
+        { 
+            while (n%i == 0) 
+            { 
+                System.out.print(i + " "); 
+                n /= i; 
+            } 
+        } 
+        if (n > 2) 
+            System.out.print(n); 
+       }
 	}
 }
